@@ -1,1 +1,7 @@
+title: kongaskristjan.github.io
+github_username:  kongaskristjan
+
+# Build settings
 theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
