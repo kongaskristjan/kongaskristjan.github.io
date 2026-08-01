@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand__mark" aria-hidden="true">KK</span>
+      <span class="brand__name">{{ site.title }}</span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link" href="{{ '/#projects' | relative_url }}">Projects</a>
+      <a class="nav__link" href="{{ '/#writing' | relative_url }}">Writing</a>
+      <a class="nav__link nav__link--external" href="https://github.com/{{ site.github_username }}" rel="me noopener">
+        GitHub
+        <svg class="icon icon--sm" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3h7.5v7.5M13 3 3.5 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour scheme">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.4A8.5 8.5 0 0 1 9.6 4a8.5 8.5 0 1 0 10.4 10.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>

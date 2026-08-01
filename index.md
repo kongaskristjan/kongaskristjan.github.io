@@ -1,5 +1,6 @@
 ---
-title:  "kongaskristjan.github.com"
+layout: page
+title: "kongaskristjan.github.com"
 ---
 
 # Posts:

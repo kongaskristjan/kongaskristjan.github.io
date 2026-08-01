@@ -1,0 +1,28 @@
+---
+layout: default
+body_class: page page--post
+---
+
+<article class="post">
+  <div class="wrap wrap--narrow">
+    <a class="back-link" href="{{ '/#writing' | relative_url }}">
+      <svg class="icon icon--sm" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All writing
+    </a>
+
+    <header class="post__header">
+      <p class="eyebrow">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        {% if page.tags.size > 0 %}
+          {% for tag in page.tags %}<span class="chip chip--sm">{{ tag }}</span>{% endfor %}
+        {% endif %}
+      </p>
+      <h1 class="post__title">{{ page.title }}</h1>
+      {% if page.description %}<p class="post__lede">{{ page.description }}</p>{% endif %}
+    </header>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+  </div>
+</article>

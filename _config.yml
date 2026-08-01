@@ -1,7 +1,31 @@
-title: kongaskristjan.github.io
-github_username:  kongaskristjan
+title: Kristjan Kongas
+tagline: Tools for machine learning and C++
+description: >-
+  Projects and writing by Kristjan Kongas — NaNsense, an interactive PyTorch
+  debugger; fire-hpp, a header-only C++ CLI library; and experiments in
+  reinforcement learning and physics simulation.
+author: Kristjan Kongas
+url: https://kongaskristjan.github.io
+baseurl: ""
+github_username: kongaskristjan
+lang: en
 
 # Build settings
-theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .idea
+  - .bundle
