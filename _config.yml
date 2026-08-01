@@ -16,7 +16,14 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+twitter:
+  card: summary_large_image
+
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/media/og-card.png
   - scope:
       path: ""
       type: posts

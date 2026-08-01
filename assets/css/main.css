@@ -23,6 +23,8 @@
   --accent: #3453d4;
   --accent-soft: #eaeeff;
   --accent-2: #0f8f9e;
+  /* Gradient end for surfaces that carry text — dark enough for white on top. */
+  --grad-b: #0a6b76;
   --glow-1: rgba(52, 83, 212, 0.22);
   --glow-2: rgba(15, 143, 158, 0.18);
   --dot: rgba(14, 20, 33, 0.09);
@@ -62,6 +64,7 @@
   --accent: #7f9dff;
   --accent-soft: #1a2038;
   --accent-2: #4fd6e8;
+  --grad-b: #4fd6e8;
   --glow-1: rgba(96, 128, 255, 0.30);
   --glow-2: rgba(79, 214, 232, 0.20);
   --dot: rgba(233, 237, 247, 0.10);
@@ -87,6 +90,7 @@
     --accent: #7f9dff;
     --accent-soft: #1a2038;
     --accent-2: #4fd6e8;
+    --grad-b: #4fd6e8;
     --glow-1: rgba(96, 128, 255, 0.30);
     --glow-2: rgba(79, 214, 232, 0.20);
     --dot: rgba(233, 237, 247, 0.10);
@@ -235,6 +239,7 @@ code, pre, kbd { font-family: var(--font-mono); }
   position: sticky;
   top: 0;
   z-index: 50;
+  background: var(--bg);
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
@@ -271,7 +276,7 @@ code, pre, kbd { font-family: var(--font-mono); }
   width: 2rem;
   height: 2rem;
   border-radius: 9px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--accent), var(--grad-b));
   color: #fff;
   font-size: 0.72rem;
   font-weight: 700;
@@ -395,6 +400,7 @@ code, pre, kbd { font-family: var(--font-mono); }
   padding: 0.4rem 0.85rem 0.4rem 0.7rem;
   border: 1px solid var(--border);
   border-radius: 999px;
+  background: var(--surface);
   background: color-mix(in srgb, var(--surface) 75%, transparent);
   color: var(--text-soft);
   font-size: 0.85rem;
@@ -484,7 +490,7 @@ code, pre, kbd { font-family: var(--font-mono); }
 .btn:hover { transform: translateY(-2px); }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--accent), var(--grad-b));
   color: #fff;
   box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 30%, transparent);
 }
