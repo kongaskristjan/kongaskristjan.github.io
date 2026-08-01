@@ -86,17 +86,20 @@
   url: /2020/02/09/phase-transition.html
   internal: true
   tagline: >-
-    A particle simulation compiled to WebAssembly, running a gas–liquid phase
-    transition in the browser.
-  tags: [C++, WebAssembly, Simulation]
+    A 2D particle simulator compiled to WebAssembly, where solid, liquid and
+    gas-like states emerge from the physics — in your browser.
+  tags: [C++, WebAssembly, Simulation, MIT]
   highlights:
-    - Create, spray, push and heat particles with the mouse and watch the
+    - Create, spray, push and heat particles with the mouse, and watch the
       system condense or boil.
     - Live readout of particle count, average velocity and temperature inside
       the range of influence.
+    - The native build has been watched 70k+ times on YouTube.
   links:
     - label: Source code
       url: https://github.com/kongaskristjan/PhaseTransition
+    - label: Video
+      url: https://youtu.be/SFf3pcE08NM
   media:
     kind: video
     src: /assets/media/phase-transition.mp4
