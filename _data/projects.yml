@@ -1,0 +1,106 @@
+# Featured projects, rendered by index.html.
+- id: nansense
+  name: NaNsense
+  repo: kongaskristjan/nansense
+  url: https://github.com/kongaskristjan/nansense
+  logo: /assets/media/nansense-logo.png
+  tagline: >-
+    An interactive PyTorch debugger that looks deep inside your neural net,
+    with just a few lines of code.
+  tags: [Python, PyTorch, MCP, MIT]
+  highlights:
+    - Pause a run, step batch by batch, and time-travel to another epoch while
+      training continues.
+    - Click through layers to see activations, gradients, weights, optimizer
+      state and per-channel statistics.
+    - Spot dying channels, insufficient receptive fields, padding artifacts and
+      fp16 gradient underflow.
+    - Speaks MCP, so a coding agent can inspect the network alongside you.
+  links:
+    - label: Documentation
+      url: https://kongaskristjan.github.io/nansense/
+    - label: Playground
+      url: https://kongaskristjan.github.io/nansense/dev/playground/
+  media:
+    kind: video
+    src: /assets/media/nansense-ui.mp4
+    poster: /assets/media/nansense-ui.jpg
+    aspect: 16 / 9
+    autoplay: false
+    caption: >-
+      The NaNsense UI: click layers to see activations and gradients, measure
+      receptive fields, collect per-channel statistics, and run deep dream
+      mid-training.
+
+- id: fire-hpp
+  name: fire-hpp
+  repo: kongaskristjan/fire-hpp
+  url: https://github.com/kongaskristjan/fire-hpp
+  tagline: >-
+    A single-header C++ library that builds a command line interface straight
+    from a function signature.
+  tags: [C++11 and up, Header-only, Boost licence]
+  highlights:
+    - Declare arguments as parameter defaults; parsing, conversion and error
+      checking happen before your code runs.
+    - "--help, type checking and usage errors come for free — no parser object,
+      no boilerplate."
+    - Flags, named and positional parameters, variadics, optionals, defaults
+      and constraints.
+    - Builds on Linux, Windows and macOS, tested against C++11 through C++23.
+  links:
+    - label: CMake integration
+      url: https://github.com/kongaskristjan/fire-hpp/tree/master/docs/cmake.md
+  media:
+    kind: code
+
+- id: stable-entropy
+  name: stable-entropy
+  repo: kongaskristjan/stable-entropy
+  url: https://github.com/kongaskristjan/stable-entropy
+  tagline: >-
+    An experimental, thermodynamics-inspired regularizer for reinforcement
+    learning.
+  tags: [Python, Reinforcement learning, Gymnasium, Apache-2.0]
+  highlights:
+    - Reward plays the role of negative energy, so high-reward action sequences
+      settle into high total probability — a Boltzmann distribution over
+      trajectories.
+    - Policy annealing implementation with CartPole and Lunar Lander
+      experiments, plus tooling to plot and compare runs.
+    - Closely related to Path Consistency Learning and MaxEnt RL, arrived at
+      from the physics side.
+  links: []
+  media:
+    kind: video
+    src: /assets/media/stable-entropy-lander.mp4
+    poster: /assets/media/stable-entropy-lander.jpg
+    aspect: 3 / 2
+    autoplay: true
+    caption: >-
+      Agents trained with policy annealing bringing the lunar lander to a safe
+      stop.
+
+- id: phase-transition
+  name: Phase Transition
+  url: /2020/02/09/phase-transition.html
+  internal: true
+  tagline: >-
+    A particle simulation compiled to WebAssembly, running a gas–liquid phase
+    transition in the browser.
+  tags: [C++, WebAssembly, Simulation]
+  highlights:
+    - Create, spray, push and heat particles with the mouse and watch the
+      system condense or boil.
+    - Live readout of particle count, average velocity and temperature inside
+      the range of influence.
+  links:
+    - label: Source code
+      url: https://github.com/kongaskristjan/PhaseTransition
+  media:
+    kind: video
+    src: /assets/media/phase-transition.mp4
+    poster: /assets/media/phase-transition.jpg
+    aspect: 16 / 9
+    autoplay: true
+    caption: Spraying particles into the simulation box.

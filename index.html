@@ -1,0 +1,176 @@
+---
+layout: default
+title: Kristjan Kongas
+body_class: page page--home
+description: >-
+  Open-source projects by Kristjan Kongas: NaNsense, an interactive PyTorch
+  debugger; fire-hpp, a header-only C++ CLI library; stable-entropy, a
+  thermodynamics-inspired regularizer for reinforcement learning; and a
+  WebAssembly particle simulation.
+---
+
+<section class="hero">
+  <div class="wrap">
+   <div class="hero__inner">
+    <p class="status">
+      <span class="status__dot" aria-hidden="true"></span>
+      Open-source developer tools
+    </p>
+
+    <h1 class="hero__title">
+      Making <span class="accent">neural networks</span> and
+      <span class="accent">C++</span> less opaque.
+    </h1>
+
+    <p class="hero__lede">
+      I'm Kristjan Kongas. I build tools that show what software is really
+      doing: a PyTorch debugger you can pause a training run with, a C++
+      library that turns a function signature into a command line interface,
+      and experiments where physics meets reinforcement learning.
+    </p>
+
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#projects">
+        Browse the projects
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="https://github.com/{{ site.github_username }}" rel="me noopener">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.34c-2.23.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg>
+        GitHub profile
+      </a>
+    </div>
+
+    <div class="hero__stats">
+      <div class="stat">
+        <span class="stat__value" data-stars-total>460+</span>
+        <span class="stat__label">GitHub stars across these projects</span>
+        <span hidden data-stars="kongaskristjan/nansense"></span>
+        <span hidden data-stars="kongaskristjan/fire-hpp"></span>
+        <span hidden data-stars="kongaskristjan/stable-entropy"></span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">{{ site.data.projects | size }}</span>
+        <span class="stat__label">Projects to poke at</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">Python &amp; C++</span>
+        <span class="stat__label">Plus a little WebAssembly</span>
+      </div>
+    </div>
+   </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="projects">
+  <div class="wrap">
+    <div class="section__head">
+      <h2>Projects</h2>
+      <p class="section__note">
+        All open source — the code lives on
+        <a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a>.
+      </p>
+    </div>
+
+    <div class="projects">
+      {% for project in site.data.projects %}
+        {% if project.internal %}
+          {% assign project_url = project.url | relative_url %}
+        {% else %}
+          {% assign project_url = project.url %}
+        {% endif %}
+
+        <article class="project reveal" id="{{ project.id }}">
+          <div class="project__media">
+            {% if project.media.kind == 'video' %}
+              <figure class="media">
+                <div class="media__frame" style="aspect-ratio: {{ project.media.aspect }};">
+                  <video
+                    src="{{ project.media.src | relative_url }}"
+                    poster="{{ project.media.poster | relative_url }}"
+                    {% if project.media.autoplay %}autoplay data-autoplay loop preload="metadata"{% else %}preload="none"{% endif %}
+                    muted playsinline
+                    aria-label="{{ project.name }} demo clip"></video>
+                  {% unless project.media.autoplay %}
+                    <button class="media__play" type="button" data-play aria-label="Play the {{ project.name }} screencast">
+                      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg></span>
+                    </button>
+                  {% endunless %}
+                </div>
+                {% if project.media.caption %}
+                  <figcaption class="media__caption">{{ project.media.caption }}</figcaption>
+                {% endif %}
+              </figure>
+            {% elsif project.media.kind == 'code' %}
+              {% include fire-terminal.html %}
+            {% endif %}
+          </div>
+
+          <div class="project__body">
+            <h3 class="project__title">
+              {% if project.logo %}
+                <img class="project__logo" src="{{ project.logo | relative_url }}" alt="" width="32" height="32" loading="lazy">
+              {% endif %}
+              <a href="{{ project_url }}"{% unless project.internal %} rel="noopener"{% endunless %}>{{ project.name }}</a>
+            </h3>
+
+            <p class="project__tagline">{{ project.tagline }}</p>
+
+            <p class="project__meta">
+              {% for tag in project.tags %}<span class="chip">{{ tag }}</span>{% endfor %}
+            </p>
+
+            <ul class="project__list">
+              {% for point in project.highlights %}
+                <li>
+                  <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8.5 3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>{{ point }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+
+            <div class="project__links">
+              <a class="link-arrow" href="{{ project_url }}"{% unless project.internal %} rel="noopener"{% endunless %}>
+                {% if project.internal %}Open the demo{% else %}View on GitHub{% endif %}
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              {% for link in project.links %}
+                <a class="link-arrow" href="{{ link.url }}" rel="noopener">
+                  {{ link.label }}
+                  <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="section" id="writing">
+  <div class="wrap">
+    <div class="section__head">
+      <h2>Writing</h2>
+      <p class="section__note">Notes and demos, occasionally.</p>
+    </div>
+
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <a class="post-card" href="{{ post.url | relative_url }}">
+            <span class="post-card__date">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            </span>
+            <h3 class="post-card__title">{{ post.title }}</h3>
+            <span class="post-card__go" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 16 16"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            {% if post.description %}<p class="post-card__desc">{{ post.description }}</p>{% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}

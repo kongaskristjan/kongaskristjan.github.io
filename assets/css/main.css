@@ -591,9 +591,12 @@ code, pre, kbd { font-family: var(--font-mono); }
 .project__title a:hover { color: var(--accent); }
 
 .project__logo {
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 6px;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
 }
 
 .project__tagline {
@@ -641,6 +644,7 @@ code, pre, kbd { font-family: var(--font-mono); }
 
 .media {
   position: relative;
+  margin: 0;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -1010,14 +1014,14 @@ kbd {
    11. Motion
    -------------------------------------------------------------------------- */
 
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
   will-change: opacity, transform;
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
@@ -1031,6 +1035,6 @@ kbd {
     transition-duration: 0.001ms !important;
   }
 
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
   .btn:hover, .media:hover, .post-card:hover { transform: none; }
 }

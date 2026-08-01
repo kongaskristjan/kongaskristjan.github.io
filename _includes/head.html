@@ -12,6 +12,8 @@
 <script>
   // Apply the stored colour scheme before first paint to avoid a flash.
   (function () {
+    // Scroll reveals only hide content when scripting is available to show it.
+    document.documentElement.classList.add('js');
     try {
       var stored = localStorage.getItem('theme');
       if (stored === 'light' || stored === 'dark') {

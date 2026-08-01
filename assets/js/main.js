@@ -99,7 +99,6 @@
       }).then(function (data) {
         if (typeof data.stargazers_count !== 'number') return;
         el.textContent = data.stargazers_count.toLocaleString('en-US');
-        el.hidden = false;
         total += data.stargazers_count;
       }).catch(function () {
         /* Rate limited or offline: the static markup stays as it is. */

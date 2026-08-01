@@ -1,0 +1,23 @@
+<div class="media">
+  <div class="terminal">
+    <div class="terminal__bar" aria-hidden="true">
+      <span class="terminal__dot"></span>
+      <span class="terminal__dot"></span>
+      <span class="terminal__dot"></span>
+      <span class="terminal__name">add.cpp</span>
+    </div>
+<pre><code><span class="tok-pre">#include</span> <span class="tok-str">&lt;iostream&gt;</span>
+<span class="tok-pre">#include</span> <span class="tok-str">&lt;fire-hpp/fire.hpp&gt;</span>
+
+<span class="tok-type">int</span> <span class="tok-fn">fired_main</span>(<span class="tok-type">int</span> x = fire::<span class="tok-fn">arg</span>(<span class="tok-str">"-x"</span>),
+               <span class="tok-type">int</span> y = fire::<span class="tok-fn">arg</span>(<span class="tok-str">"-y"</span>)) {
+    std::cout &lt;&lt; x + y &lt;&lt; std::endl;
+    <span class="tok-key">return</span> <span class="tok-num">0</span>;
+}
+
+<span class="tok-fn">FIRE</span>(fired_main)</code></pre>
+<pre><span class="tok-com"># the whole program — no parse(), no argument map</span>
+<span class="tok-prompt">$</span> ./add -x=1 -y=2
+<span class="tok-out">3</span></pre>
+  </div>
+</div>
