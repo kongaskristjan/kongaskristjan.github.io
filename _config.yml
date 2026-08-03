@@ -36,3 +36,5 @@ exclude:
   - vendor
   - .idea
   - .bundle
+  - AGENTS.md
+  - CLAUDE.md
