@@ -1,4 +1,4 @@
-/* Small progressive enhancements: colour scheme, scroll reveals, media. */
+/* Small progressive enhancements: colour scheme, media playback, star counts. */
 (function () {
   'use strict';
 
@@ -22,36 +22,6 @@
         localStorage.setItem('theme', next);
       } catch (e) {}
     });
-  }
-
-  /* -------------------------------------------------------------- header */
-
-  var header = document.querySelector('.site-header');
-  if (header) {
-    var onScroll = function () {
-      header.classList.toggle('is-stuck', window.scrollY > 8);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  /* ------------------------------------------------------------- reveals */
-
-  var revealables = document.querySelectorAll('.reveal');
-  if (!revealables.length) {
-    // nothing to do
-  } else if (reduceMotion || !('IntersectionObserver' in window)) {
-    revealables.forEach(function (el) { el.classList.add('is-visible'); });
-  } else {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
-
-    revealables.forEach(function (el) { observer.observe(el); });
   }
 
   /* --------------------------------------------------------------- media */

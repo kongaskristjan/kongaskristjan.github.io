@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fbfcfe" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0c11" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fdfdfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14151a" media="(prefers-color-scheme: dark)">
 
 {% seo %}
 
@@ -12,8 +12,6 @@
 <script>
   // Apply the stored colour scheme before first paint to avoid a flash.
   (function () {
-    // Scroll reveals only hide content when scripting is available to show it.
-    document.documentElement.classList.add('js');
     try {
       var stored = localStorage.getItem('theme');
       if (stored === 'light' || stored === 'dark') {

@@ -12,14 +12,10 @@ description: >-
 <section class="hero">
   <div class="wrap">
    <div class="hero__inner">
-    <p class="status">
-      <span class="status__dot" aria-hidden="true"></span>
-      Open-source developer tools
-    </p>
+    <p class="eyebrow">Open-source developer tools</p>
 
     <h1 class="hero__title">
-      Making <span class="accent">neural networks</span> and
-      <span class="accent">C++</span> less opaque.
+      Making neural networks and C++ less opaque.
     </h1>
 
     <p class="hero__lede">
@@ -40,23 +36,14 @@ description: >-
       </a>
     </div>
 
-    <div class="hero__stats">
-      <div class="stat">
-        <span class="stat__value" data-stars-total>460+</span>
-        <span class="stat__label">GitHub stars across these projects</span>
-        <span hidden data-stars="kongaskristjan/nansense"></span>
-        <span hidden data-stars="kongaskristjan/fire-hpp"></span>
-        <span hidden data-stars="kongaskristjan/stable-entropy"></span>
-      </div>
-      <div class="stat">
-        <span class="stat__value">{{ site.data.projects | size }}</span>
-        <span class="stat__label">Projects to poke at</span>
-      </div>
-      <div class="stat">
-        <span class="stat__value">Python &amp; C++</span>
-        <span class="stat__label">Plus a little WebAssembly</span>
-      </div>
-    </div>
+    <p class="hero__facts">
+      {{ site.data.projects | size }} projects below, written in Python, C++ and
+      a little WebAssembly — <span data-stars-total>460+</span> GitHub stars
+      between them.
+      <span hidden data-stars="kongaskristjan/nansense"></span>
+      <span hidden data-stars="kongaskristjan/fire-hpp"></span>
+      <span hidden data-stars="kongaskristjan/stable-entropy"></span>
+    </p>
    </div>
   </div>
 </section>
@@ -79,32 +66,7 @@ description: >-
           {% assign project_url = project.url %}
         {% endif %}
 
-        <article class="project reveal" id="{{ project.id }}">
-          <div class="project__media">
-            {% if project.media.kind == 'video' %}
-              <figure class="media">
-                <div class="media__frame" style="aspect-ratio: {{ project.media.aspect }};">
-                  <video
-                    src="{{ project.media.src | relative_url }}"
-                    poster="{{ project.media.poster | relative_url }}"
-                    {% if project.media.autoplay %}autoplay data-autoplay loop preload="metadata"{% else %}preload="none"{% endif %}
-                    muted playsinline
-                    aria-label="{{ project.name }} demo clip"></video>
-                  {% unless project.media.autoplay %}
-                    <button class="media__play" type="button" data-play aria-label="Play the {{ project.name }} screencast">
-                      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg></span>
-                    </button>
-                  {% endunless %}
-                </div>
-                {% if project.media.caption %}
-                  <figcaption class="media__caption">{{ project.media.caption }}</figcaption>
-                {% endif %}
-              </figure>
-            {% elsif project.media.kind == 'code' %}
-              {% include fire-terminal.html %}
-            {% endif %}
-          </div>
-
+        <article class="project" id="{{ project.id }}">
           <div class="project__body">
             <h3 class="project__title">
               {% if project.logo %}
@@ -140,6 +102,31 @@ description: >-
                 </a>
               {% endfor %}
             </div>
+          </div>
+
+          <div class="project__media">
+            {% if project.media.kind == 'video' %}
+              <figure class="media">
+                <div class="media__frame" style="aspect-ratio: {{ project.media.aspect }};">
+                  <video
+                    src="{{ project.media.src | relative_url }}"
+                    poster="{{ project.media.poster | relative_url }}"
+                    {% if project.media.autoplay %}autoplay data-autoplay loop preload="metadata"{% else %}preload="none"{% endif %}
+                    muted playsinline
+                    aria-label="{{ project.name }} demo clip"></video>
+                  {% unless project.media.autoplay %}
+                    <button class="media__play" type="button" data-play aria-label="Play the {{ project.name }} screencast">
+                      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg></span>
+                    </button>
+                  {% endunless %}
+                </div>
+                {% if project.media.caption %}
+                  <figcaption class="media__caption">{{ project.media.caption }}</figcaption>
+                {% endif %}
+              </figure>
+            {% elsif project.media.kind == 'code' %}
+              {% include fire-terminal.html %}
+            {% endif %}
           </div>
         </article>
       {% endfor %}
